@@ -76,6 +76,8 @@ app.get("/", (req, res) => {
     res.redirect("/dashboard");
 });
 
+
+
 app.get("/dashboard", (req, res) => {
     // fetch("http://localhost:3000/api").then((result) => {
     //     console.log("Inside /dashboard");

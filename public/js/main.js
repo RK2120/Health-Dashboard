@@ -173,10 +173,12 @@ socket.on("mqtt", (message) => {
     console.log("Emit captured by client");
     console.log(message);
     dataObj = message;
-    const userId = Number(dataObj.id);
+    const userId = dataObj.id;
+    const kioskId = dataObj.kioskId;
     const hr = Number(dataObj.heartrate);
     const temp = Number(dataObj.temp);
     const spo2 = Number(dataObj.spo2);
+    $("#kioskId").html(kioskId);
     $("#userId").html(userId);
     $("#heartRate").html(
         dataObj.heartrate + " <small class=" + "text-muted" + ">BPM</small>"
@@ -187,52 +189,51 @@ socket.on("mqtt", (message) => {
     $("#spo2").html(
         dataObj.spo2 + " <small class=" + "text-muted" + ">%</small>"
     );
-    $("#heartRateCard").css = ("background-color", "red");
     switch (hr) {
         case hr < 60:
-            $("#heartRateCard").css = ("background-color", "red");
+            $("#heartRateCardHeader").css = ("background-color", "#FFA07A");
             break;
 
         case hr < 110:
-            $("#heartRateCard").css = ("color", "green");
+            $("#heartRateCardHeader").css = ("background-color", "#90EE90");
             break;
 
         case hr <= 200:
-            $("#heartRateCard").css = ("color", "red");
+            $("#heartRateCardHeader").css = ("background-color", "#FFA07A");
             break;
 
         default:
-            $("#heartRateCard").css = ("color", "black");
+            $("#heartRateCardHeader").css = ("background-color", "#89aeff90");
             break;
     }
     switch (spo2) {
         case spo2 < 90:
-            $("#spo2Card").css = ("color", "red");
+            $("#spo2CardHeader").css = ("background-color", "#FFA07A");
             break;
 
         case spo2 < 93:
-            $("#spo2Card").css = ("color", "yellow");
+            $("#spo2CardHeader").css = ("background-color", "#ffff99");
             break;
 
         case spo2 <= 100:
-            $("#spo2Card").css = ("color", "green");
+            $("#spo2CardHeader").css = ("background-color", "#90EE90");
             break;
 
         default:
-            $("#spo2Card").css = ("color", "black");
+            $("#spo2CardHeader").css = ("background-color", "#89aeff90");
             break;
     }
     switch (temp) {
         case temp < 38:
-            $("#temperatureCard").css = ("color", "green");
+            $("#temperatureCardHeader").css = ("background-color", "#90EE90");
             break;
 
         case temp <= 50:
-            $("#temperatureCard").css = ("color", "red");
+            $("#temperatureCardHeader").css = ("background-color", "#FFA07A");
             break;
 
         default:
-            $("#temperatureCard").css = ("color", "black");
+            $("#temperatureCardHeader").css = ("background-color", "#89aeff90");
             break;
     }
     getJSONQuery(dataObj);
