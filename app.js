@@ -76,7 +76,17 @@ app.get("/", (req, res) => {
     res.redirect("/dashboard");
 });
 
+app.get("/about", (req, res) => {
+    res.render("about");
+});
 
+app.get("/contact", (req, res) => {
+    res.render("contact");
+});
+
+app.get("/how_it_works", (req, res) => {
+    res.render("about");
+});
 
 app.get("/dashboard", (req, res) => {
     // fetch("http://localhost:3000/api").then((result) => {
