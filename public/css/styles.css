@@ -1,0 +1,132 @@
+body {
+    font-family: "Montserrat";
+    text-align: center;
+    background: #e0e5ec;
+}
+
+h1,
+h2,
+h3,
+h6 {
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+h5 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    display: inline;
+}
+
+h4 {
+    font-family: "Montserrat";
+    font-weight: 650;
+}
+
+p {
+    color: #8f8f8f;
+}
+
+.navbar {
+    padding: 0 0 4.5rem;
+    background: #4175e6;
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 2% 10%;
+    color: antiquewhite;
+}
+
+.nav-item {
+    padding: 0 18px;
+    color: burlywood;
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-family: "Montserrat-Medium";
+    color: black;
+}
+
+.footer-padding {
+    padding-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1abc9c;
+}
+
+.footer p {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.container-fluid {
+    padding: 7% 15%;
+    background: #fea0a0;
+}
+
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    .container-fluid {
+        padding: 0% 2%;
+    }
+}
+
+.container {
+    max-width: 960px;
+}
+
+.pricing-header {
+    max-width: 700px;
+}
+
+.card-deck .card-header {
+    border-radius: 25px 25px 0px 0px;
+    background-color: #89aeff90;
+}
+
+.card-deck .card {
+    min-width: 220px;
+    border-radius: 25px;
+    border-style: hidden;
+    background: #e0e5ec;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    /* box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); */
+    box-shadow: 20px 20px 60px #b8bcc2, -20px -20px 60px #ffffff;
+}
+
+.box-shadow-inset {
+    /* box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); */
+    box-shadow: inset 20px 20px 60px #b8bcc2, inset -20px -20px 60px #ffffff;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    /* height: 80vh;
+    width: 80vw; */
+}
