@@ -26,6 +26,7 @@ var content = {
     temperature: 0,
     spo2: 0,
     id: 0,
+    kioskId: 0,
 };
 
 var contentArr = {
@@ -46,7 +47,7 @@ const influx = new Influx.InfluxDB({
 const client = mqtt.connect("mqtt://192.168.2.30:1883");
 
 client.on("connect", function () {
-    client.subscribe("/raka", function (err) {
+    client.subscribe("/sensordata", function (err) {
         if (err) {
             console.error(err);
         }
@@ -60,10 +61,11 @@ client.on("message", function (topic, message) {
     //     console.log(message.toString());
     // }
 
-    if (topic === "/raka") {
+    if (topic === "/sensordata") {
         dataObj = JSON.parse(message.toString());
         // console.log(JSON.parse(message.toString()));
         content.id = dataObj.id;
+        content.kioskId = dataObj.kioskId;
         content.heartRate = dataObj.heartrate;
         content.spo2 = dataObj.spo2;
         content.temperature = dataObj.temp;

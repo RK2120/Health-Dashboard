@@ -64,7 +64,7 @@ var heartRateChart = new Chart(heartRateCtx, {
         labels: [],
         datasets: [
             {
-                label: "impressions",
+                label: "Heart Rate",
                 borderColor: "#f70403",
                 data: [],
                 // options: {
@@ -82,6 +82,7 @@ var heartRateChart = new Chart(heartRateCtx, {
                 //     },
                 // },
                 options: options,
+                tension: 0.25,
             },
         ],
     },
@@ -99,7 +100,7 @@ var temperatureChart = new Chart(temperatureCtx, {
         labels: [],
         datasets: [
             {
-                label: "impressions",
+                label: "Temperature",
                 borderColor: "#f098f9",
                 data: [],
                 // options: {
@@ -117,6 +118,7 @@ var temperatureChart = new Chart(temperatureCtx, {
                 //     },
                 // },
                 options: options,
+                tension: 0.25,
             },
         ],
     },
@@ -134,7 +136,7 @@ var spo2Chart = new Chart(spo2Ctx, {
         labels: [],
         datasets: [
             {
-                label: "impressions",
+                label: "SPO2",
                 borderColor: "#0AFA75",
                 data: [],
                 // options: {
@@ -152,6 +154,7 @@ var spo2Chart = new Chart(spo2Ctx, {
                 //     },
                 // },
                 options: options,
+                tension: 0.25,
             },
         ],
     },
@@ -191,49 +194,49 @@ socket.on("mqtt", (message) => {
     );
     switch (hr) {
         case hr < 60:
-            $("#heartRateCardHeader").css = ("background-color", "#FFA07A");
+            $("#heartRateCardHeader").css("background-color", "#FFA07A");
             break;
 
         case hr < 110:
-            $("#heartRateCardHeader").css = ("background-color", "#90EE90");
+            $("#heartRateCardHeader").css("background-color", "#90EE90");
             break;
 
         case hr <= 200:
-            $("#heartRateCardHeader").css = ("background-color", "#FFA07A");
+            $("#heartRateCardHeader").css("background-color", "#FFA07A");
             break;
 
         default:
-            $("#heartRateCardHeader").css = ("background-color", "#89aeff90");
+            $("#heartRateCardHeader").css("background-color", "#89aeff90");
             break;
     }
     switch (spo2) {
         case spo2 < 90:
-            $("#spo2CardHeader").css = ("background-color", "#FFA07A");
+            $("#spo2CardHeader").css("background-color", "#FFA07A");
             break;
 
         case spo2 < 93:
-            $("#spo2CardHeader").css = ("background-color", "#ffff99");
+            $("#spo2CardHeader").css("background-color", "#ffff99");
             break;
 
         case spo2 <= 100:
-            $("#spo2CardHeader").css = ("background-color", "#90EE90");
+            $("#spo2CardHeader").css("background-color", "#90EE90");
             break;
 
         default:
-            $("#spo2CardHeader").css = ("background-color", "#89aeff90");
+            $("#spo2CardHeader").css("background-color", "#89aeff90");
             break;
     }
     switch (temp) {
         case temp < 38:
-            $("#temperatureCardHeader").css = ("background-color", "#90EE90");
+            $("#temperatureCardHeader").css("background-color", "#90EE90");
             break;
 
         case temp <= 50:
-            $("#temperatureCardHeader").css = ("background-color", "#FFA07A");
+            $("#temperatureCardHeader").css("background-color", "#FFA07A");
             break;
 
         default:
-            $("#temperatureCardHeader").css = ("background-color", "#89aeff90");
+            $("#temperatureCardHeader").css("background-color", "#89aeff90");
             break;
     }
     getJSONQuery(dataObj);
