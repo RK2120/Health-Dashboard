@@ -9,6 +9,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "axios": "^0.21.1",
         "body-parser": "^1.18.3",
         "chart.js": "^3.3.2",
