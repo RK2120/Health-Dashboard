@@ -79,15 +79,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-    res.render("about");
+    res.render("about", { pageName: "about" });
 });
 
 app.get("/contact", (req, res) => {
-    res.render("contact");
+    res.render("contact", { pageName: "contact" });
 });
 
-app.get("/how_it_works", (req, res) => {
-    res.render("about");
+app.get("/help", (req, res) => {
+    res.render("help", { pageName: "help" });
 });
 
 app.get("/dashboard", (req, res) => {
@@ -100,6 +100,7 @@ app.get("/dashboard", (req, res) => {
     console.log(req.body);
     res.render("dashboard", {
         content: content,
+        pageName: "dashboard",
         // id: id,
         // heartRateArr: contentArr.heartRateArr,
         // dateArr: contentArr.dateArr,

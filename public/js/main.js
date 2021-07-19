@@ -178,9 +178,9 @@ socket.on("mqtt", (message) => {
     dataObj = message;
     const userId = dataObj.id;
     const kioskId = dataObj.kioskId;
-    const hr = Number(dataObj.heartrate);
-    const temp = Number(dataObj.temp);
-    const spo2 = Number(dataObj.spo2);
+    const hr = dataObj.heartrate;
+    const temp = dataObj.temp;
+    const spo2 = dataObj.spo2;
     $("#kioskId").html(kioskId);
     $("#userId").html(userId);
     $("#heartRate").html(

@@ -15,6 +15,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
   <script src="https://kit.fontawesome.com/093740ebc3.js" crossorigin="anonymous"></script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -25,12 +26,25 @@
 
 <body>
 
-  <div class="navbar d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-5 border-bottom shadow-sm">
-    <h2 class="navbar-brand my-0 mr-md-auto">Health Dashboard</h2>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-light" href="/">Dashboard</a>
-      <a class="p-2 text-light" href="/about">About</a>
-      <a class="p-2 text-light" href="/help">How It Works</a>
-      <a class="p-2 text-light" href="/contact">Contact Us</a>
-    </nav>
-  </div>
+  <section id="navigation">
+    <div class="navbar d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-5 border-bottom shadow-sm">
+      <h2 class="navbar-brand my-0 mr-md-auto">Health Dashboard</h2>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <ul class="nav mb-3">
+          <li class="nav-item">
+            <a class="nav-link <% if (pageName === 'dashboard') { %>active<% } %>" href="/">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <% if (pageName === 'about') { %>active<% } %>" href="/about"">About</a>
+        </li>
+        <li class=" nav-item">
+              <a class="nav-link <% if (pageName === 'help') { %>active<% } %>" href="/help"">How It Works</a>
+        </li>
+        </ul>
+        <!-- <a class=" p-2 text-light" href="/">Dashboard</a>
+              <a class="p-2 text-light" href="/about">About</a>
+              <a class="p-2 text-light" href="/help">How It Works</a>
+              <a class="p-2 text-light" href="/contact">Contact Us</a> -->
+      </nav>
+    </div>
+  </section>
